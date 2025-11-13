@@ -8,9 +8,8 @@ import { serve } from "inngest/express";
 const app = express();
 app.use(express.json());//access to req.body
 
-import { inngest } from './config/inngest.js';
-import { serve } from 'inngest/express';
-import { functions } from './config/inngest.js';
+
+
 app.use(clerkMiddleware());//req.auth will be available in the request object
 
 app.use("/api/inngest", serve({ client: inngest, functions }));
