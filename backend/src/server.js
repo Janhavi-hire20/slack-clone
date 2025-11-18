@@ -11,7 +11,7 @@ import cors from 'cors';
 
 const app = express();
 app.use(express.json());//access to req.body
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));//enable CORS for all routes
+app.use(cors({ origin: ENV.CLIENT_URL, credentials: true }));//enable CORS for all routes
 
 
 app.use(clerkMiddleware());//req.auth will be available in the request object
